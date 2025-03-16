@@ -14,7 +14,6 @@ public class Main {
             rev=rev+s.charAt(i);
         }
         System.out.println(rev);
-
         Main obj=new Main();
         int x=10;
         if(obj.SearchInArray(x)){
@@ -36,7 +35,7 @@ public class Main {
         }
         return false;
     }
-    //Max number in array
+    //Max and Min  number in array
     public List<Integer> LargestNumber() {
         int[] arr1 = {41, 10, 12, 14, 32};
         List<Integer> l=new ArrayList<>();
