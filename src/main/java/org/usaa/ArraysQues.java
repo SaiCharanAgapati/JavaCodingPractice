@@ -2,6 +2,7 @@ package org.usaa;
 
 import javax.swing.plaf.IconUIResource;
 import javax.swing.plaf.MenuItemUI;
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class ArraysQues {
@@ -99,5 +100,34 @@ public class ArraysQues {
             maximum=Math.max(maximum,count1);
         }
         System.out.println(maximum);
+
+
+        //Reverse Array
+        int [] arr4={1,2,3,4,5,6,7,8,9};
+        int [] arr5=new int[arr4.length];
+        int j=0;
+
+         for(int i=arr4.length-1;i>=0;i--) {
+                 arr5[j] = arr4[i];
+                 j++;
+         }
+        System.out.println(Arrays.toString(arr5));
+    //Remove duplicates from array
+        int [] arr6={1,1,1,1,4,4,4,4,23,2,43,4,2,2,4};
+
+        HashSet<Integer> h=new HashSet<>();
+        int newLength=0;
+        for(int y :arr6){
+            if(!h.contains(y)){
+                h.add(y);
+                arr6[newLength++]=y;
+            }
+        }
+        for(int i=0;i<newLength;i++){
+            System.out.println(arr6[i]);
+        }
+
+
+
     }
 }
