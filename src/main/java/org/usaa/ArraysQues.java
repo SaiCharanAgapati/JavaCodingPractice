@@ -2,8 +2,7 @@ package org.usaa;
 
 import javax.swing.plaf.IconUIResource;
 import javax.swing.plaf.MenuItemUI;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 public class ArraysQues {
     public static void main(String[] args) {
@@ -127,6 +126,36 @@ public class ArraysQues {
             System.out.println(arr6[i]);
         }
 
+    //Missing Numbers in AN Array
+        int [] arr7 = {1,6,3,4,6,2};
+        int min1=Integer.MAX_VALUE;
+        int max1=Integer.MIN_VALUE;
+        Map<Integer,Integer> missigSet= new HashMap<>();
+        for(int num:arr7){
+            if(missigSet.containsKey(num)){
+                missigSet.put(num,missigSet.get(num)+1);
+            }else{
+                missigSet.put(num,1);
+            }
+
+            min1= Math.min(min1,num);
+            max1=Math.max(max1,num);
+
+        }
+        List<Integer> m2=new ArrayList<>();
+        //finding missing numbers logic
+        for(int i=min1;i<=max1;i++){
+            if(!missigSet.containsKey(i)){
+                m2.add(i);
+            }
+
+        }
+        for(Map.Entry<Integer,Integer> entry :missigSet.entrySet()){
+            if(entry.getValue()>1){
+                System.out.println(entry.getKey() +" is Repeted "+entry.getValue() + " times");
+            }
+        }
+        System.out.println("MISSING LETTERS IN ARR7 : "+m2);
 
 
     }
